@@ -176,7 +176,16 @@ void MainWindow::on_checkBox_demo_clicked(bool checked)
 }
 void MainWindow::on_cbox_demo_alignment_currentIndexChanged(int index)
 {
-    ui->groupBox_demo->setAlignment(Qt::AlignCenter);
+    switch (index) {
+    case 0:    ui->groupBox_demo->setAlignment(Qt::AlignLeft);
+        break;
+    case 1:    ui->groupBox_demo->setAlignment(Qt::AlignRight);
+        break;
+    case 2:    ui->groupBox_demo->setAlignment(Qt::AlignCenter);
+        break;
+    default:    ui->groupBox_demo->setAlignment(Qt::AlignJustify);
+        break;
+    }
 }
 
 void MainWindow::on_btn_stackedWidget_toggle_clicked()
