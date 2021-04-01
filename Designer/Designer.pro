@@ -36,9 +36,6 @@ FORMS += \
     dialog_xml.ui
 
 # Default rules for deployment.
-qnx: target.path = /tmp/$${TARGET}/bin
-else: unix:!android: target.path = /opt/$${TARGET}/bin
-!isEmpty(target.path): INSTALLS += target
 
 DESTDIR         = $$PWD/../app_bin
 MOC_DIR         = $$PWD/../build/designer

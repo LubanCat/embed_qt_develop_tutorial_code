@@ -5,13 +5,13 @@ win32 {
 LIBS += -L$$PWD/winlib/ -lavcodec -lavfilter -lavformat -lswscale -lavutil
 }
 
-unix {
-LIBS +=  -L/usr/local/ffmpeg/lib -lavfilter -lavformat -lavdevice -lavcodec -lswscale -lavutil -lswresample -lpthread -lm -lrt -ldl\
-}
-
 #unix {
-#LIBS += -L$$PWD/armlib/ -lavfilter -lavformat -lavdevice -lavcodec -lswscale -lavutil -lswresample -lpthread -lm -lrt -ldl
+#LIBS +=  -L/usr/local/ffmpeg/lib -lavfilter -lavformat -lavdevice -lavcodec -lswscale -lavutil -lswresample -lpthread -lm -lrt -ldl\
 #}
+
+unix {
+LIBS += -L$$PWD/armlib/ -lavfilter -lavformat -lavdevice -lavcodec -lswscale -lavutil -lswresample -lpthread -lm -lrt -ldl
+}
 
 
 HEADERS += \
