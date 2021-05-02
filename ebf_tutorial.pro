@@ -21,9 +21,14 @@ SUBDIRS += HelloQt \
 SUBDIRS += SerialPort \
            Sql
 
+SUBDIRS += SerialPort
+
+SUBDIRS += QtUi Skin
+
 SUBDIRS += RgbLight
 
 SUBDIRS += Camera
+
 
 SUBDIRS += MusicPlayer
 

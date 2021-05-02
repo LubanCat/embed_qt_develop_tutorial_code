@@ -4,4 +4,3 @@ SUBDIRS       =     Weather \
                     XML \
                     Config \
                     File
-s

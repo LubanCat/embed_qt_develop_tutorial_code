@@ -40,7 +40,6 @@ MOC_DIR         = $$PWD/../../build/calc
 OBJECTS_DIR     = $$PWD/../../build/calc
 DEFINES         += BUILD_BY_PRO
 
-
 win32 {
     src_dir = $$PWD\\..\\thirdpart\\libqui\\lib\\*.dll
     dst_dir = $$PWD\\..\\app_bin\\
