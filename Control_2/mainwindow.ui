@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>794</width>
+    <width>800</width>
     <height>593</height>
    </rect>
   </property>
@@ -15,10 +15,25 @@
   </property>
   <widget class="QWidget" name="centralWidget">
    <layout class="QGridLayout" name="gridLayout_5">
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="spacing">
+     <number>0</number>
+    </property>
     <item row="0" column="0">
      <widget class="QStackedWidget" name="stackedWidget">
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="page_stackedWidget">
        <layout class="QGridLayout" name="gridLayout_27">
@@ -262,8 +277,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>818</width>
-             <height>498</height>
+             <width>198</width>
+             <height>98</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_17">
@@ -300,23 +315,7 @@
       <widget class="QWidget" name="page_listWidget">
        <layout class="QGridLayout" name="gridLayout_10">
         <item row="0" column="0">
-         <widget class="QListWidget" name="listWidget">
-          <item>
-           <property name="text">
-            <string>新建项目</string>
-           </property>
-           <property name="checkState">
-            <enum>PartiallyChecked</enum>
-           </property>
-           <property name="icon">
-            <iconset resource="../Skin/images.qrc">
-             <normaloff>:/images/backlight/ic_hand_30.png</normaloff>:/images/backlight/ic_hand_30.png</iconset>
-           </property>
-           <property name="flags">
-            <set>ItemIsSelectable|ItemIsEditable|ItemIsDragEnabled|ItemIsDropEnabled|ItemIsUserCheckable|ItemIsEnabled</set>
-           </property>
-          </item>
-         </widget>
+         <widget class="QListWidget" name="listWidget"/>
         </item>
        </layout>
       </widget>
@@ -349,8 +348,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>794</width>
-     <height>28</height>
+     <width>800</width>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_page">
@@ -407,10 +406,10 @@
    </attribute>
    <widget class="QWidget" name="dockWidgetContents">
     <layout class="QGridLayout" name="gridLayout_15">
-     <item row="1" column="0">
+     <item row="0" column="0" rowspan="2">
       <widget class="QStackedWidget" name="stackedWidget_menu">
        <property name="currentIndex">
-        <number>2</number>
+        <number>4</number>
        </property>
        <widget class="QWidget" name="page_stackedWidget_menu">
         <layout class="QGridLayout" name="gridLayout_16">
@@ -503,8 +502,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>201</width>
-              <height>378</height>
+              <width>98</width>
+              <height>28</height>
              </rect>
             </property>
             <attribute name="label">
@@ -516,8 +515,8 @@
              <rect>
               <x>0</x>
               <y>0</y>
-              <width>201</width>
-              <height>378</height>
+              <width>98</width>
+              <height>194</height>
              </rect>
             </property>
             <attribute name="label">
@@ -580,6 +579,14 @@
             </layout>
            </widget>
            <widget class="QWidget" name="page_3">
+            <property name="geometry">
+             <rect>
+              <x>0</x>
+              <y>0</y>
+              <width>98</width>
+              <height>88</height>
+             </rect>
+            </property>
             <attribute name="label">
              <string>GroupBox</string>
             </attribute>
@@ -591,7 +598,10 @@
                </property>
               </widget>
              </item>
-             <item row="2" column="0">
+             <item row="0" column="0">
+              <widget class="QComboBox" name="cbox_demo_alignment"/>
+             </item>
+             <item row="3" column="0">
               <spacer name="verticalSpacer_9">
                <property name="orientation">
                 <enum>Qt::Vertical</enum>
@@ -599,13 +609,17 @@
                <property name="sizeHint" stdset="0">
                 <size>
                  <width>20</width>
-                 <height>297</height>
+                 <height>268</height>
                 </size>
                </property>
               </spacer>
              </item>
-             <item row="0" column="0">
-              <widget class="QComboBox" name="cbox_demo_alignment"/>
+             <item row="2" column="0">
+              <widget class="QCheckBox" name="checkBox_demo_flat">
+               <property name="text">
+                <string>flat</string>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -751,7 +765,7 @@
          <item row="0" column="0">
           <widget class="QGroupBox" name="groupBox_2">
            <property name="title">
-            <string>GroupBox</string>
+            <string>table操作</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_11">
             <item row="3" column="0">
@@ -865,7 +879,7 @@
          <item row="1" column="0">
           <widget class="QGroupBox" name="groupBox_3">
            <property name="title">
-            <string>GroupBox</string>
+            <string>item属性</string>
            </property>
            <layout class="QGridLayout" name="gridLayout_12">
             <item row="4" column="0">
@@ -898,7 +912,7 @@
            <property name="sizeHint" stdset="0">
             <size>
              <width>20</width>
-             <height>1</height>
+             <height>129</height>
             </size>
            </property>
           </spacer>

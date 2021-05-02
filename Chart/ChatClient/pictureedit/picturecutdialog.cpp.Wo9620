@@ -1,0 +1,98 @@
+/******************************************************************
+ Copyright (C) 2017 - All Rights Reserved by
+ 文 件 名 : picturecutdialog.cpp --- PictureCutDialog
+ 作 者    :
+ 编写日期 : 2017
+ 说 明    :
+ 历史纪录 :
+ <作者>    <日期>        <版本>        <内容>
+
+*******************************************************************/
+#include "picturecutdialog.h"
+#include "ui_picturecutdialog.h"
+#include "photoshotdialog.h"
+
+#include <QFileDialog>
+
+PictureCutDialog::PictureCutDialog(QWidget *parent) :
+    CustomMoveWidget(parent),
+    ui(new Ui::PictureCutDialog)
+{
+    ui->setupUi(this);
+
+    this->setWindowFlags(this->windowFlags() | Qt::WindowStaysOnTopHint);
+
+    pdialog = NULL;
+}
+
+PictureCutDialog::~PictureCutDialog()
+{
+    delete ui;
+}
+
+void PictureCutDialog::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
+    }
+}
+
+/**
+ * @brief PictureCutDialog::on_btnLoad_clicked
+ */
+void PictureCutDialog::on_btnLoad_clicked()
+{
+    // 加载图片
+    static QString s_strPath = "./";
+    QString strFileName = QFileDialog::getOpenFileName(this,
+                                                       tr("选择图片"),
+                                                       s_strPath,
+                                                       tr("图片(*.jpg;*.png)"));
+    // 如果没选择文件直接退出
+    if (strFileName.isEmpty()) {
+        return;
+    }
+
+    s_strPath = strFileName;
+    // 这里是原图的地址
+    QPixmap pixmap(strFileName);
+    // 非空判断
+    if (!pixmap.isNull())
+    {
+        int nW = ui->widgetLoad->width();
+        int nH = ui->widgetLoad->height();
+        if ((pixmap.width() > nW) && (pixmap.height() > nH))
+        {
+            ui->labelPreview->resize(QSize(nW, nH));
+            scaledPix = pixmap.scaled(nW, nH, Qt::KeepAspectRatio);
+        }
+        else {
+            ui->labelPreview->resize(pixmap.size());
+            scaledPix = pixmap;
+        }
+
+        ui->labelPreview->setPixmap(scaledPix);
+    }
+
+    if (NULL == pdialog) {
+        //该类为剪切框
+        pdialog = new PhotoShotDialog(ui->labelPreview);
+//        connect(pdialog, SIGNAL(signalMoved(QRect)), this, SLOT(sltCutDlgMoved(QRect)));
+        pdialog->show();
+    }
+
+}
+
+/**
+ * @brief PictureCutDialog::SltCutDlgMoved
+ * @param rect
+ */
+void PictureCutDialog::SltCutDlgMoved(QRect rect)
+{
+
+}

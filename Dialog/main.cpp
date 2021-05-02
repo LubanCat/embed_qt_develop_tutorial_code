@@ -10,6 +10,7 @@ int main(int argc, char *argv[])
     Skin::InitSkin();
 
     MainWindow w;
+    w.resize(800, 480);
     w.show();
 
     return a.exec();

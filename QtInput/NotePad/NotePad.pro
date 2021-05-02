@@ -38,3 +38,18 @@ DESTDIR         = $$PWD/../../app_bin/input
 MOC_DIR         = $$PWD/../../build/input/notepad
 OBJECTS_DIR     = $$PWD/../../build/input/notepad
 DEFINES         += BUILD_BY_PRO
+
+win32 {
+    src_dir = $$PWD\\..\\thirdpart\\libqui\\lib\\*.dll
+    skin_lib = $$PWD\\..\\thirdpart\\libskin\\lib\\Skin.dll
+    dst_dir = $$PWD\\..\\app_bin\\
+    # dst_dir 最后的 \\ 是必须的，用来标示 xcopy 到一个文件夹，若不存在，创建之
+
+    # Replace slashes in paths with backslashes for Windows
+    src_dir ~= s,/,\\,g
+    skin_lib ~= s,/,\\,g
+    dst_dir ~= s,/,\\,g
+
+    system(xcopy $$src_dir $$dst_dir /y /e)
+    system(xcopy $$skin_lib $$dst_dir /y /e)
+}

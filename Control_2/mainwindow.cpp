@@ -57,14 +57,14 @@ void MainWindow::initInterface()
 //    ui->cbox_scrollArea_property->addItems(Alignlist);
 
     QStringList layoutlist;
-    layoutlist<<"联级展开"<<"平铺展开";
+    layoutlist<<"级联展开"<<"平铺展开";
     ui->cbox_mdiArea_layout->addItems(layoutlist);
     QStringList modelist;
     modelist<<"窗口模式"<<"tab模式";
     ui->cbox_mdiArea_model->addItems(modelist);
 
     QStringList stylelist;
-    stylelist<<"style 1"<<"style 2"<<"style 3";
+    stylelist<<"style"<<"style 1"<<"style 2"<<"style 3";
     ui->cbox_listWidget_style->addItems(stylelist);
 
     QStringList edittriggerlist;
@@ -188,6 +188,12 @@ void MainWindow::on_cbox_demo_alignment_currentIndexChanged(int index)
     }
 }
 
+void MainWindow::on_checkBox_demo_flat_clicked(bool checked)
+{
+    qDebug()<<ui->groupBox_demo->isFlat();
+    ui->groupBox_demo->setFlat(checked);
+}
+
 void MainWindow::on_btn_stackedWidget_toggle_clicked()
 {
     int page=ui->stackedWidget_demo->currentIndex();
@@ -242,32 +248,32 @@ void MainWindow::on_cbox_tabWidget_currentIndexChanged(int index)
     ui->tabWidget->setTabPosition((QTabWidget::TabPosition)index);
 }
 
-void MainWindow::on_cbox_scrollArea_property_currentIndexChanged(int index)
-{
-    switch (index) {
-    case 0:
-        ui->scrollArea->setAlignment(Qt::AlignLeft);
-        break;
-    case 1:
-        ui->scrollArea->setAlignment(Qt::AlignHCenter);
-        break;
-    case 2:
-        ui->scrollArea->setAlignment(Qt::AlignRight);
-        break;
-    case 3:
-        ui->scrollArea->setAlignment(Qt::AlignTop);
-        break;
-    case 4:
-        ui->scrollArea->setAlignment(Qt::AlignVCenter);
-        break;
-    case 5:
-        ui->scrollArea->setAlignment(Qt::AlignBottom);
-        break;
-    default:
-        ui->scrollArea->setAlignment(Qt::AlignLeft|Qt::AlignLeft);
-        break;
-    }
-}
+//void MainWindow::on_cbox_scrollArea_property_currentIndexChanged(int index)
+//{
+//    switch (index) {
+//    case 0:
+//        ui->scrollArea->setAlignment(Qt::AlignLeft);
+//        break;
+//    case 1:
+//        ui->scrollArea->setAlignment(Qt::AlignHCenter);
+//        break;
+//    case 2:
+//        ui->scrollArea->setAlignment(Qt::AlignRight);
+//        break;
+//    case 3:
+//        ui->scrollArea->setAlignment(Qt::AlignTop);
+//        break;
+//    case 4:
+//        ui->scrollArea->setAlignment(Qt::AlignVCenter);
+//        break;
+//    case 5:
+//        ui->scrollArea->setAlignment(Qt::AlignBottom);
+//        break;
+//    default:
+//        ui->scrollArea->setAlignment(Qt::AlignLeft|Qt::AlignLeft);
+//        break;
+//    }
+//}
 
 void MainWindow::on_btn_mdiArea_add_clicked()
 {
@@ -490,9 +496,10 @@ void MainWindow::on_btn_tableWidget_adjust_clicked()
 }
 void MainWindow::on_btn_tableWidget_insertitem_clicked()
 {
-    for(int i=0; i< ui->tableWidget->columnCount();i++ )
+    ui->tableWidget->clearContents();
+    for(int i=0; i< ui->tableWidget->rowCount();i++ )
     {
-        for(int j=0; j<ui->tableWidget->rowCount(); j++)
+        for(int j=0; j<ui->tableWidget->columnCount(); j++)
         {
             QTableWidgetItem *item = new QTableWidgetItem();
             item->setText(QString("item(%1,%2)").arg(i+1).arg(j+1));
@@ -502,8 +509,8 @@ void MainWindow::on_btn_tableWidget_insertitem_clicked()
 }
 void MainWindow::on_cbox_table_title_clicked(bool checked)
 {
-    ui->tableWidget->verticalHeader()->setVisible(checked); //隐藏列表头
-    ui->tableWidget->horizontalHeader()->setVisible(checked); //隐藏行表头
+    ui->tableWidget->verticalHeader()->setVisible(checked);
+    ui->tableWidget->horizontalHeader()->setVisible(checked);
 }
 
 void MainWindow::on_cbox_tableWidget_EditTrigger_currentIndexChanged(int index)

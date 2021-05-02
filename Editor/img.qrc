@@ -1,0 +1,29 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/icon_logo.png</file>
+        <file>img/icon_brief.png</file>
+        <file>img/icon_exit.png</file>
+        <file>img/icon_explain.png</file>
+        <file>img/icon_new.png</file>
+        <file>img/icon_open.png</file>
+        <file>img/icon_redo.png</file>
+        <file>img/icon_save.png</file>
+        <file>img/icon_save_all.png</file>
+        <file>img/icon_undo.png</file>
+        <file>img/icon_close.png</file>
+        <file>img/icon_close_all.png</file>
+        <file>img/icon_color.png</file>
+        <file>img/icon_copy.png</file>
+        <file>img/icon_cut.png</file>
+        <file>img/icon_edit.png</file>
+        <file>img/icon_file.png</file>
+        <file>img/icon_help.png</file>
+        <file>img/icon_paste.png</file>
+        <file>img/icon_setting.png</file>
+        <file>img/icon_size_plus.png</file>
+        <file>img/icon_size_redu.png</file>
+        <file>img/icon_type.png</file>
+        <file>img/icon_saveas.png</file>
+        <file>img/icon_select_all.png</file>
+    </qresource>
+</RCC>

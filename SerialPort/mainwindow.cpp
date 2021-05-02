@@ -58,6 +58,12 @@
 #include <QMessageBox>
 #include <QTimer>
 
+#include <QDebug>
+#include <QDataStream>
+#include <QIODevice>
+
+#include <QTextCodec>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     m_ui(new Ui::MainWindow),
@@ -156,6 +162,13 @@ void MainWindow::writeData(const QByteArray &data)
 void MainWindow::readData()
 {
     const QByteArray data = m_serial->readAll();
+
+    //接收中文的时候要设置对应的编码
+    //比如在Windows上用串口发送数据，Windows上面编码是gb2312，接收的时候也要用gb2312去编码接收数据，不然就会乱码
+//    QString str = QTextCodec::codecForName("GB2312")->toUnicode(data);
+//    qDebug()<<str;
+//    m_console->putData(str);
+
     m_console->putData(data);
 }
 
@@ -194,7 +207,7 @@ void MainWindow::sendTest()
 
 void MainWindow::readTest()
 {
-    const QByteArray data = m_serial->readAll();
+    QByteArray data = m_serial->readAll();
     m_console->putData(data);
     this->writeData(data);
 }

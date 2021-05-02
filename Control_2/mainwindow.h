@@ -35,6 +35,8 @@ private slots:
     void on_spinBox_midLineWidth_valueChanged(int arg1);
 
     void on_checkBox_demo_clicked(bool checked);
+    void on_cbox_demo_alignment_currentIndexChanged(int index);
+    void on_checkBox_demo_flat_clicked(bool checked);
 
     void on_btn_stackedWidget_toggle_clicked();
     void on_btn_stackedWidget_insert_clicked();
@@ -44,8 +46,6 @@ private slots:
     void on_btn_tabWidget_insert_clicked();
     void on_btn_tabWidget_delete_clicked();
     void on_cbox_tabWidget_currentIndexChanged(int index);
-
-    void on_cbox_scrollArea_property_currentIndexChanged(int index);
 
     void on_btn_mdiArea_add_clicked();
     void on_btn_mdiArea_close_clicked();
@@ -79,8 +79,6 @@ private slots:
     void on_btn_tableWidget_cleartable_clicked();
     void on_btn_tableWidget_cleardate_clicked();
     void on_btn_tableWidget_insertitem_clicked();
-
-    void on_cbox_demo_alignment_currentIndexChanged(int index);
 
 private:
     Ui::MainWindow *ui;

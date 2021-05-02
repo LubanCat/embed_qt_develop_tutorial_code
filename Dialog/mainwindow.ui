@@ -156,7 +156,7 @@
        <item row="2" column="1">
         <widget class="QPushButton" name="btn_logo">
          <property name="text">
-          <string>登录框</string>
+          <string>自定义对话框</string>
          </property>
         </widget>
        </item>

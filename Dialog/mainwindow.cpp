@@ -16,7 +16,7 @@
 #include <QtPrintSupport/QPrintDialog>
 #include <QtPrintSupport/qprintpreviewwidget.h>
 
-#include "logon.h"
+#include "qtmessage.h"
 
 #include <QDebug>
 
@@ -305,6 +305,15 @@ void MainWindow::on_btn_print_clicked()
 
 void MainWindow::on_btn_logo_clicked()
 {
-    Logon *logon = new Logon(this);
-    logon->exec();
+    QtMessage *msg=new QtMessage(this);
+    msg->setMessage(QString("自定义问对话框"));
+    if(msg->exec()==QDialog::Accepted)
+    {
+        qDebug()<<"你点击了确定按钮";
+    }
+    else
+    {
+        qDebug()<<"你点击了取消按钮";
+    }
+    delete msg;
 }

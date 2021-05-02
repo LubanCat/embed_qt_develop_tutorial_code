@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resource/background/background.png</file>
+        <file>resource/common/aio_arrow_down.png</file>
+        <file>resource/common/aio_arrow_right.png</file>
+        <file>resource/common/ic_arrow_down.png</file>
+        <file>resource/common/ic_close.png</file>
+        <file>resource/common/ic_close_white.png</file>
+        <file>resource/common/ic_min.png</file>
+        <file>resource/common/ic_min_white.png</file>
+        <file>resource/images/app.png</file>
+        <file>resource/images/ic_find.png</file>
+        <file>resource/images/ic_goods.png</file>
+        <file>resource/images/ic_key.png</file>
+        <file>resource/images/if_users.png</file>
+        <file>resource/images/ic_home.png</file>
+        <file>resource/images/ic_exit.png</file>
+        <file>resource/images/ic_add.png</file>
+        <file>resource/images/ic_cancel.png</file>
+        <file>resource/images/ic_delete.png</file>
+        <file>resource/images/ic_edit.png</file>
+        <file>resource/images/ic_ok.png</file>
+        <file>resource/images/ic_refresh.png</file>
+        <file>resource/images/ic_backup.png</file>
+        <file>resource/images/ic_excel.png</file>
+        <file>resource/images/ic_data_backup.png</file>
+        <file>resource/images/ic_data_udo.png</file>
+        <file>resource/images/ic_app.png</file>
+        <file>resource/images/ic_info.png</file>
+        <file>resource/images/ic_question.png</file>
+        <file>resource/images/ic_warning.png</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>resource/qss/default.css</file>
+    </qresource>
+</RCC>

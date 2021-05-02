@@ -1,0 +1,68 @@
+/******************************************************************
+ Copyright (C) 2017 - All Rights Reserved by
+ 文 件 名 : systemsetting.cpp --- SystemSetting
+ 作 者    :
+ 编写日期 : 2017
+ 说 明    :
+ 历史纪录 :
+ <作者>    <日期>        <版本>        <内容>
+
+*******************************************************************/
+#include "systemsetting.h"
+#include "ui_systemsetting.h"
+
+#include "myapp.h"
+#include "global.h"
+
+#include <QMessageBox>
+
+SystemSetting::SystemSetting(QWidget *parent) :
+    CustomMoveWidget(parent),
+    ui(new Ui::SystemSetting)
+{
+    ui->setupUi(this);
+}
+
+SystemSetting::~SystemSetting()
+{
+    delete ui;
+}
+
+void SystemSetting::changeEvent(QEvent *e)
+{
+    QWidget::changeEvent(e);
+    switch (e->type()) {
+    case QEvent::LanguageChange:
+        ui->retranslateUi(this);
+        break;
+    default:
+        break;
+    }
+}
+
+// 保存ip地址配置
+void SystemSetting::on_btnSaveSetting_clicked()
+{
+    QString strHost = ui->lineEditHostAddr->text();
+
+    // 判断是否ip地址
+    if (!myHelper::IsIP(strHost))
+    {
+        QMessageBox::information(this, tr("提示"), tr("IP地址设置有误!"));
+        return;
+    }
+
+    int nPort = ui->lineEditHostPort->text();
+    if (nPort > 65535) {
+        QMessageBox::information(this, tr("提示"), tr("端口设置有误!"));
+        return;
+    }
+
+    MyApp::m_strHostAddr = strHost;
+    MyApp::m_nMsgPort    = nPort;
+
+    // 保存配置
+    MyApp::SaveConfig();
+
+    QMessageBox::information(this, tr("提示"), tr("端口设置有误!"));
+}

@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>706</width>
+    <height>418</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="1">
+     <widget class="QTabWidget" name="tabWidget_list">
+      <property name="currentIndex">
+       <number>-1</number>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>706</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_help">
+    <property name="toolTip">
+     <string>帮助</string>
+    </property>
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="action_brief"/>
+    <addaction name="action_explain"/>
+   </widget>
+   <widget class="QMenu" name="menu_file">
+    <property name="mouseTracking">
+     <bool>false</bool>
+    </property>
+    <property name="toolTip">
+     <string>文件</string>
+    </property>
+    <property name="toolTipDuration">
+     <number>-1</number>
+    </property>
+    <property name="statusTip">
+     <string>文件</string>
+    </property>
+    <property name="whatsThis">
+     <string>文件</string>
+    </property>
+    <property name="tearOffEnabled">
+     <bool>false</bool>
+    </property>
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <property name="separatorsCollapsible">
+     <bool>false</bool>
+    </property>
+    <property name="toolTipsVisible">
+     <bool>false</bool>
+    </property>
+    <addaction name="action_new"/>
+    <addaction name="action_open"/>
+    <addaction name="action_save"/>
+    <addaction name="action_saveas"/>
+    <addaction name="action_save_all"/>
+    <addaction name="action_rich"/>
+    <addaction name="separator"/>
+    <addaction name="action_close_current"/>
+    <addaction name="action_close_all"/>
+    <addaction name="action_exit"/>
+   </widget>
+   <widget class="QMenu" name="menu_edit">
+    <property name="toolTip">
+     <string>编辑</string>
+    </property>
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="action_undo"/>
+    <addaction name="action_redo"/>
+    <addaction name="separator"/>
+    <addaction name="action_cut"/>
+    <addaction name="action_copy"/>
+    <addaction name="action_paste"/>
+    <addaction name="action_delete"/>
+    <addaction name="separator"/>
+    <addaction name="action_select_all"/>
+   </widget>
+   <widget class="QMenu" name="menu_setting">
+    <property name="toolTip">
+     <string>设置</string>
+    </property>
+    <property name="title">
+     <string>设置</string>
+    </property>
+    <widget class="QMenu" name="menu">
+     <property name="title">
+      <string>选择字体&amp;F</string>
+     </property>
+     <addaction name="action_1"/>
+     <addaction name="action_2"/>
+     <addaction name="action_3"/>
+     <addaction name="action_4"/>
+    </widget>
+    <addaction name="action_size_plus"/>
+    <addaction name="action_size_redu"/>
+    <addaction name="menu"/>
+    <addaction name="action_color"/>
+    <addaction name="separator"/>
+    <addaction name="action_"/>
+   </widget>
+   <addaction name="menu_file"/>
+   <addaction name="menu_edit"/>
+   <addaction name="menu_setting"/>
+   <addaction name="menu_help"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>LeftToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="action_new">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_new.png</normaloff>:/img/icon_new.png</iconset>
+   </property>
+   <property name="text">
+    <string>新建</string>
+   </property>
+  </action>
+  <action name="action_open">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_open.png</normaloff>:/img/icon_open.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开</string>
+   </property>
+  </action>
+  <action name="action_save">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_save.png</normaloff>:/img/icon_save.png</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="action_saveas">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_saveas.png</normaloff>:/img/icon_saveas.png</iconset>
+   </property>
+   <property name="text">
+    <string>另存为</string>
+   </property>
+  </action>
+  <action name="action_save_all">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_save_all.png</normaloff>:/img/icon_save_all.png</iconset>
+   </property>
+   <property name="text">
+    <string>全部保存</string>
+   </property>
+  </action>
+  <action name="action_close_all">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_close_all.png</normaloff>:/img/icon_close_all.png</iconset>
+   </property>
+   <property name="text">
+    <string>全部关闭&amp;C</string>
+   </property>
+  </action>
+  <action name="action_exit">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_exit.png</normaloff>:/img/icon_exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+  </action>
+  <action name="action_undo">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_undo.png</normaloff>:/img/icon_undo.png</iconset>
+   </property>
+   <property name="text">
+    <string>撤销</string>
+   </property>
+  </action>
+  <action name="action_redo">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_redo.png</normaloff>:/img/icon_redo.png</iconset>
+   </property>
+   <property name="text">
+    <string>恢复</string>
+   </property>
+  </action>
+  <action name="action_cut">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_cut.png</normaloff>:/img/icon_cut.png</iconset>
+   </property>
+   <property name="text">
+    <string>剪切</string>
+   </property>
+  </action>
+  <action name="action_copy">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_copy.png</normaloff>:/img/icon_copy.png</iconset>
+   </property>
+   <property name="text">
+    <string>复制</string>
+   </property>
+  </action>
+  <action name="action_paste">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_paste.png</normaloff>:/img/icon_paste.png</iconset>
+   </property>
+   <property name="text">
+    <string>粘贴</string>
+   </property>
+  </action>
+  <action name="action_delete">
+   <property name="text">
+    <string>清空</string>
+   </property>
+  </action>
+  <action name="action_select_all">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_select_all.png</normaloff>:/img/icon_select_all.png</iconset>
+   </property>
+   <property name="text">
+    <string>全选</string>
+   </property>
+  </action>
+  <action name="action_brief">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_brief.png</normaloff>:/img/icon_brief.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于Qt</string>
+   </property>
+  </action>
+  <action name="action_explain">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_explain.png</normaloff>:/img/icon_explain.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于本教程</string>
+   </property>
+  </action>
+  <action name="action_size_plus">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_size_plus.png</normaloff>:/img/icon_size_plus.png</iconset>
+   </property>
+   <property name="text">
+    <string>字号+</string>
+   </property>
+  </action>
+  <action name="action_size_redu">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_size_redu.png</normaloff>:/img/icon_size_redu.png</iconset>
+   </property>
+   <property name="text">
+    <string>字号-</string>
+   </property>
+  </action>
+  <action name="action_color">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_color.png</normaloff>:/img/icon_color.png</iconset>
+   </property>
+   <property name="text">
+    <string>选择颜色</string>
+   </property>
+  </action>
+  <action name="action_close_current">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_close.png</normaloff>:/img/icon_close.png</iconset>
+   </property>
+   <property name="text">
+    <string>关闭当前</string>
+   </property>
+  </action>
+  <action name="action_1">
+   <property name="text">
+    <string>隶书&amp;O</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="text">
+    <string>宋体&amp;S</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="text">
+    <string>楷书&amp;R</string>
+   </property>
+  </action>
+  <action name="action_4">
+   <property name="text">
+    <string>黑体&amp;B</string>
+   </property>
+  </action>
+  <action name="action_">
+   <property name="icon">
+    <iconset resource="img.qrc">
+     <normaloff>:/img/icon_type.png</normaloff>:/img/icon_type.png</iconset>
+   </property>
+   <property name="text">
+    <string>选择样式</string>
+   </property>
+  </action>
+  <action name="action_rich">
+   <property name="text">
+    <string>保存为HTML</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="img.qrc"/>
+ </resources>
+ <connections/>
+</ui>

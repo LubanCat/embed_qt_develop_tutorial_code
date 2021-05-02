@@ -1,0 +1,241 @@
+*{	font-family: "微软雅黑"; }
+
+/*主界面样式*/
+QWidget#MainWindow {
+    border: 1px solid #A5A6A8;
+    border-radius: 2px;
+    background-color: #4A7ABB;
+    /*background-image: url(:/resource/background/background.png);*/
+}
+
+QWidget#LoginWidget {
+   background-image: url(:/resource/background/background.png);
+}
+
+QWidget#widgetUser {
+    background-color: #50F1F2F3;
+    border: 1px solid #4A7ABB;
+    border-radius: 2px;
+}
+
+QWidget#widgetWinTitle {
+    background:qlineargradient(spread:pad,x1:0,y1:0,x2:0,y2:1,stop:0 #387ECC,stop:1 #3869C4);
+}
+
+QWidget#widgetnav {
+    background-color: #4A7ABB;
+}
+
+QWidget#widgetBody {
+    background-color: #4A7ABB;
+}
+
+QWidget#widgetStatus {
+    background-color: #666666;
+}
+
+QWidget#widgetStatus QLabel {
+    color: #FFFFFF;
+    font: 14px;
+}
+
+QStackedWidget#stackedWidgetFunc {
+    background-color: #FFFFFF;
+}
+
+QWidget#widgetWinTitle QLabel {
+    color: #FFFFFF;
+    font: bold 16px;
+    font-family: "幼圆";
+}
+
+QPushButton#btnWinMin,QPushButton#btnWinClose, QPushButton#btnWinMenu {
+    border: none;
+    border-radius: 0px;
+    background-color: transparent;
+    min-width: 24px;
+    min-height: 24px;
+}
+
+QPushButton#btnWinMin:hover {
+    padding-top: 2px;
+    border: 1px solid #FFFFFF;
+}
+
+QPushButton#btnWinClose:hover {
+    padding-top: 2px;
+    background-color: #FF0000;
+}
+
+
+/*end 主界面样式 end*/
+
+
+/*滚动条样式*/
+QScrollBar:horizontal{
+    background:#C7E5D6;
+    padding:0px;
+    border-radius:6px;
+    max-height:12px;
+}
+
+QScrollBar::handle:horizontal{
+    background:#9FB7AB;
+    min-width:50px;
+    border-radius:6px;
+}
+
+QScrollBar::handle:horizontal:hover{
+    background:#5F6E66;
+}
+
+QScrollBar::handle:horizontal:pressed{
+    background:#5F6E66;
+}
+
+QScrollBar::add-page:horizontal{
+    background:none;
+}
+
+QScrollBar::sub-page:horizontal{
+    background:none;
+}
+
+QScrollBar::add-line:horizontal{
+    background:none;
+}
+
+QScrollBar::sub-line:horizontal{
+    background:none;
+}
+
+QScrollBar:vertical{
+    background:#C7E5D6;
+    padding:0px;
+    border-radius:6px;
+    max-width:12px;
+}
+
+QScrollBar::handle:vertical{
+    background:#9FB7AB;
+    min-height:50px;
+    border-radius:6px;
+}
+
+QScrollBar::handle:vertical:hover{
+    background:#5F6E66;
+}
+
+QScrollBar::handle:vertical:pressed{
+    background:#5F6E66;
+}
+
+QScrollBar::add-page:vertical{
+    background:none;
+}
+
+QScrollBar::sub-page:vertical{
+    background:none;
+}
+
+QScrollBar::add-line:vertical{
+    background:none;
+}
+
+QScrollBar::sub-line:vertical{
+    background:none;
+}
+
+QScrollArea{
+    border:0px;
+}
+/*end 滚动条样式 end*/
+
+/*系统菜单条样式*/
+QMenu{
+    color:#000000;
+    background-color:#EDEEEE;
+    margin:0px;
+    padding:3px 10px;
+}
+
+QMenu:disabled{
+    color:#000000;
+    background-color:#FFFFFF;
+    border:1px solid #A8B2AC;
+    margin:0px;
+}
+
+QMenu::item{
+    padding: 3px 20px;
+}
+
+QMenu::indicator{
+    width: 13px;
+    height: 13px;
+}
+
+QMenu::item:selected,QMenuBar::item:selected{
+    color: #FFFFFF;
+    border: 0px solid #9FB7AB;
+    background-color: #009BDB;
+}
+
+QMenu::separator{
+    height: 1px;
+    background-color: #B5C1CA;
+}
+
+/*end 系统菜单样式 end*/
+
+
+/* 登录界面样式 */
+QPushButton {
+    border: 1px solid #666666;
+    border-radius: 2px;
+    background: #FFFFFF;
+    color: #000000;
+    font: 12px;
+    padding-top: 0px;
+    min-width: 80px;
+    min-height: 27px;
+}
+
+QPushButton:hover {
+    color: #333333;
+    padding-top: 2px;
+}
+
+
+QWidget#widgetNav QPushButton {
+    border: none;
+    border-radius: 0px;
+    background-color: none;
+    color: #FFFFFF;
+    font: bold 14px;
+    min-width: 120px;
+    min-height: 40px;
+}
+
+QWidget#widgetNav QPushButton:hover {
+    border: 1px solid #03D303;
+}
+
+QWidget#widgetNav QPushButton:checked {
+    border: 1px solid #D3D3D3;
+}
+
+QWidget#widgetNav QPushButton:pressed {
+    border: 1px solid #D3D3D3;
+}
+
+
+QLineEdit {
+    border: 1px solid #D1D1D1;
+    min-height: 22px;
+    background-color: #FFFFFF;
+}
+
+QLineEdit:focus {
+    border: 1px solid #1583DD;
+}

@@ -10,7 +10,10 @@ QT += sql widgets widgets
 requires(qtConfig(tableview))
 
 target.path = $$[QT_INSTALL_EXAMPLES]/sql/drilldown
+
 INSTALLS += target
+
+TARGET = Book
 
 DESTDIR         = $$PWD/../app_bin/sql
 MOC_DIR         = $$PWD/../build/sql/book
