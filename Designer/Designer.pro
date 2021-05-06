@@ -37,6 +37,12 @@ FORMS += \
 
 # Default rules for deployment.
 
+INCLUDEPATH += $$PWD/../thirdpart/libskin/include
+LIBS += -L$$PWD/../thirdpart/libskin/lib -lSkin
+
 DESTDIR         = $$PWD/../app_bin
 MOC_DIR         = $$PWD/../build/designer
 OBJECTS_DIR     = $$PWD/../build/designer
+
+RESOURCES += \
+    img.qrc

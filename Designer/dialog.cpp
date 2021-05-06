@@ -8,6 +8,16 @@ Dialog::Dialog(QWidget *parent) :
     ui(new Ui::Dialog)
 {
     ui->setupUi(this);
+
+    QPixmap map(":/img/passwd.png");
+    map.scaled(40,40);
+    ui->label_passwd->setPixmap(map);
+
+    ui->pushButton_login->setStyleSheet(QString("QPushButton{border-image: url(:/images/keyled/ic_btn.png);}"
+                                         "QPushButton:pressed{border-image: url(:/images/keyled/ic_btn_pre.png);}"));
+    ui->pushButton_logout->setStyleSheet(QString("QPushButton{border-image: url(:/images/keyled/ic_btn.png);}"
+                                         "QPushButton:pressed{border-image: url(:/images/keyled/ic_btn_pre.png);}"));
+
 }
 
 Dialog::~Dialog()

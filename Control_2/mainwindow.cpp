@@ -87,8 +87,48 @@ void MainWindow::inttControl()
     {
         connect(action,SIGNAL(triggered()),this,SLOT(on_setCurrentIndex()));
     }
+    CreateMenu();
 }
 
+void MainWindow::CreateMenu()
+{
+    QMenu *mainMenu = new QMenu(this);
+    mainMenu->setTitle("mainMenu");
+    QAction *action1 = new QAction(mainMenu);
+    action1->setObjectName("action1");
+    action1->setText("action1");
+    connect(action1,SIGNAL(triggered()),this,SLOT(menu_clicked()));
+    QAction *action2 = new QAction(mainMenu);
+    action2->setObjectName("action2");
+    action2->setText("action2");
+    connect(action2,SIGNAL(triggered()),this,SLOT(menu_clicked()));
+    QList<QAction *> actionlist;
+    actionlist << action1 << action2;
+
+    QMenu *nextMenu = new QMenu(mainMenu);
+    nextMenu->setTitle("nextMenu&N");
+    QAction *action3 = new QAction(nextMenu);
+    connect(action3,SIGNAL(triggered()),this,SLOT(menu_clicked()));
+    action3->setObjectName("action3");
+    action3->setText("action3");
+    QAction *action4 = new QAction(nextMenu);
+    action4->setObjectName("action4");
+    action4->setText("action4");
+    connect(action4,SIGNAL(triggered()),this,SLOT(menu_clicked()));
+    nextMenu->addAction(action3);
+    nextMenu->addAction(action4);
+
+    mainMenu->addActions(actionlist);
+    mainMenu->addMenu(nextMenu);
+
+    ui->menuBar->addMenu(mainMenu);
+}
+void MainWindow::menu_clicked()
+{
+    QAction* action= qobject_cast<QAction*>(sender());
+
+    ui->statusBar->showMessage(QString("%1被点击").arg(action->objectName()));
+}
 void MainWindow::on_setCurrentIndex()
 {
     QAction* action= qobject_cast<QAction*>(sender());

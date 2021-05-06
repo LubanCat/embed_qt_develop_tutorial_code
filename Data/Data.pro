@@ -3,4 +3,5 @@ SUBDIRS       =     Weather \
                     Settings \
                     XML \
                     Config \
-                    File
+                    File \
+                    Editor

@@ -17,6 +17,8 @@
 
 #include <QMap>
 
+class ThreadKey;
+
 class KeyPressWidget : public QtAnimationWidget
 {
     Q_OBJECT
@@ -34,6 +36,8 @@ private:
 
     void KeyPressed(int index);
     void ChangeRgbLightValue(QString led, bool on);
+
+    ThreadKey *m_threadKey;
 
 protected:
     void paintEvent(QPaintEvent *);

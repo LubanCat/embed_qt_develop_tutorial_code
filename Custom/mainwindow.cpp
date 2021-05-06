@@ -103,12 +103,13 @@ void MainWindow::InitDesktop()
     nPage++;
     m_launchItems.insert(24, new LauncherItem(24, nPage, tr("InfoNES模拟器"), QPixmap(":/images/mainwindow/ic_game.png")));
 
+    nPage++;
     // 第四页
     m_launchItems.insert(25, new LauncherItem(25, nPage, tr("登录对话框"), QPixmap(":/images/mainwindow/ic_webview.png")));
 
 
+    m_launcherWidget->SetPageCount(nPage+1);
     m_launcherWidget->SetItems(m_launchItems);
-
 }
 
 void MainWindow::InitThreads()

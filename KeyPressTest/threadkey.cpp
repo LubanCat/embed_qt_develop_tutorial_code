@@ -75,5 +75,26 @@ void ThreadKey::run()
     }
 
     close(fd);
+#else
+
+    while(1)
+    {
+        switch(qrand() % 3)
+        {
+        case 0:
+            emit signalKeyPressed(KEY1,qrand() % 2);
+            break;
+        case 1:
+            emit signalKeyPressed(KEY2,qrand() % 2);
+            break;
+        case 2:
+            emit signalKeyPressed(WAKE_UP,qrand() % 2);
+            break;
+        default:
+            break;
+        }
+        sleep(1);
+    }
 #endif
+
 }

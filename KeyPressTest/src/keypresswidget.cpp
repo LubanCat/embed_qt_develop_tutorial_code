@@ -10,6 +10,7 @@
   Niyh	   2019    	1.0.0 1     文件创建
 *******************************************************************/
 #include "keypresswidget.h"
+#include "threadkey.h"
 #include "skin.h"
 
 #include <QPainter>
@@ -26,6 +27,11 @@ const char *pchLedText[3] = { "LED_R", "LED_G", "LED_B"};
 KeyPressWidget::KeyPressWidget(QWidget *parent) : QtAnimationWidget(parent)
 {
     InitButtons();
+
+    m_threadKey = new ThreadKey(this, 1);
+    connect(m_threadKey, SIGNAL(signalKeyPressed(const quint8 ,const quint8)), this, SLOT(SltKeyPressed(const quint8 ,const quint8)));
+    m_threadKey->start();
+    //m_threadKey->
 }
 
 KeyPressWidget::~KeyPressWidget()

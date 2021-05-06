@@ -11,5 +11,5 @@ target.path = $$[QT_INSTALL_EXAMPLES]/sql/cachedtable
 INSTALLS += target
 
 DESTDIR         = $$PWD/../../app_bin/sql
-MOC_DIR         = $$PWD/../../build/cachedtable
-OBJECTS_DIR     = $$PWD/../../build/cachedtable
+MOC_DIR         = $$PWD/../../build/sql/cachedtable
+OBJECTS_DIR     = $$PWD/../../build/sql/cachedtable

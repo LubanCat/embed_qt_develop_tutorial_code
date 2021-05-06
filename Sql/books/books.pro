@@ -15,6 +15,6 @@ INSTALLS += target
 
 TARGET = Book
 
-DESTDIR         = $$PWD/../app_bin/sql
-MOC_DIR         = $$PWD/../build/sql/book
-OBJECTS_DIR     = $$PWD/../build/sql/book
+DESTDIR         = $$PWD/../../app_bin/sql
+MOC_DIR         = $$PWD/../../build/sql/book
+OBJECTS_DIR     = $$PWD/../../build/sql/book

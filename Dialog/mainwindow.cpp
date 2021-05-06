@@ -148,11 +148,20 @@ void MainWindow::on_btn_critical_clicked()
     QMessageBox::critical(this, dlgTitle, str,QMessageBox::Ok);
 }
 
+//void MainWindow::on_btn_information_clicked()
+//{
+//    QString dlgTitle="information";
+//    QString str="提示消息";
+//    QMessageBox::information(this, dlgTitle, str,QMessageBox::Yes);
+//}
+
 void MainWindow::on_btn_information_clicked()
 {
+    QMessageBox meg;
     QString dlgTitle="information";
     QString str="提示消息";
-    QMessageBox::information(this, dlgTitle, str,QMessageBox::Yes);
+    QMessageBox msg(QMessageBox::Information,dlgTitle, str,QMessageBox::Yes, NULL);
+    msg.exec();
 }
 
 void MainWindow::on_btn_question_clicked()

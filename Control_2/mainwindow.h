@@ -23,12 +23,13 @@ public:
 private:
     void initInterface();
     void inttControl();
+    void CreateMenu();
 
     QFileInfoList searchFile(QTreeWidgetItem *root,QString path);
 
 private slots:
     void on_setCurrentIndex();
-
+    void menu_clicked();
     void on_cbox_frame_Shape_currentIndexChanged(int index);
     void on_cbox_frame_Shadow_currentIndexChanged(int index);
     void on_spinBox_lineWidth_valueChanged(int arg1);

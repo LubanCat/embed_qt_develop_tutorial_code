@@ -5,8 +5,10 @@
 INCLUDEPATH     += $$PWD/src
 
 HEADERS += \
-    $$PWD/src/keypresswidget.h
+    $$PWD/src/keypresswidget.h \
+    $$PWD/threadkey.h
 
 SOURCES += \
-    $$PWD/src/keypresswidget.cpp
+    $$PWD/src/keypresswidget.cpp \
+    $$PWD/threadkey.cpp
 

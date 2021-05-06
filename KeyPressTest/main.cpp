@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
     Skin::InitSkin();
 
     KeyPressWidget w;
+
 #ifdef __arm__
     w.showFullScreen();
 #else

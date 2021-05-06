@@ -91,7 +91,7 @@
              <x>0</x>
              <y>0</y>
              <width>337</width>
-             <height>214</height>
+             <height>216</height>
             </rect>
            </property>
            <attribute name="label">
@@ -112,8 +112,8 @@
             <rect>
              <x>0</x>
              <y>0</y>
-             <width>98</width>
-             <height>43</height>
+             <width>337</width>
+             <height>216</height>
             </rect>
            </property>
            <attribute name="label">
@@ -429,7 +429,7 @@
              <x>0</x>
              <y>0</y>
              <width>664</width>
-             <height>358</height>
+             <height>357</height>
             </rect>
            </property>
            <layout class="QGridLayout" name="gridLayout_4">
@@ -618,7 +618,7 @@
      <x>0</x>
      <y>0</y>
      <width>716</width>
-     <height>28</height>
+     <height>23</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu_page">
@@ -640,6 +640,7 @@
     <property name="title">
      <string>关于</string>
     </property>
+    <addaction name="action_about"/>
     <addaction name="action_exit"/>
    </widget>
    <addaction name="menu_page"/>
@@ -683,6 +684,11 @@
   <action name="action_exit">
    <property name="text">
     <string>退出</string>
+   </property>
+  </action>
+  <action name="action_about">
+   <property name="text">
+    <string>关于Qt</string>
    </property>
   </action>
  </widget>

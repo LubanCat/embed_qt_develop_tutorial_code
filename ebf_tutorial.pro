@@ -8,13 +8,14 @@ SUBDIRS += HelloQt \
            Control_1 \
            Control_2 \
            Dialog \
-           Editor \
            Graphics \
            Custom \
            Containers \
            FileSystem \
            Data \
            KeyPressTest \
+           Threads \
+           Ipc \
            Chart \
            QtQuick
 
@@ -29,8 +30,7 @@ SUBDIRS += RgbLight
 
 SUBDIRS += Camera
 
-
-SUBDIRS += MusicPlayer
+#SUBDIRS += MusicPlayer
 
 #SUBDIRS += OpenGL
 

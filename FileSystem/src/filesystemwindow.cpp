@@ -122,8 +122,7 @@ void FileSystemWindow::SltItemClicked(const QModelIndex &index)
         m_strRootPath = m_model->filePath(index);
         m_addressBar->setAddress(m_strRootPath);
         m_listView->setRootIndex(m_model->index(m_strRootPath));
-    }
-    else {
+    }   else {
         QFileInfo fileInfo(m_model->filePath(index));
         if (fileInfo.isFile() && (fileInfo.suffix() == "txt" ||
                                   fileInfo.suffix() == "cpp" ||

@@ -7,6 +7,7 @@
 #include <QTimer>
 
 #include <QPushButton>
+#include <QMessageBox>
 #include <QMovie>
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -102,7 +103,8 @@ void MainWindow::inttControl()
     connect(ui->action_datetime,SIGNAL(triggered()),this,SLOT(on_setCurrentIndex()));
     connect(ui->action_etc,SIGNAL(triggered()),this,SLOT(on_setCurrentIndex()));
     connect(ui->action_text,SIGNAL(triggered()),this,SLOT(on_setCurrentIndex()));
-    //connect(ui->action_exit,SIGNAL(triggered()),this,SLOT(exit()));
+    connect(ui->action_about,SIGNAL(triggered()),this,SLOT(on_setCurrentIndex()));
+    connect(ui->action_exit,SIGNAL(triggered()),this,SLOT(on_setCurrentIndex()));
 
     QList<QPushButton*> btnlist = ui->stackedWidget->findChildren<QPushButton*>();
     foreach(auto btn, btnlist)
@@ -135,6 +137,7 @@ void MainWindow::inttControl()
         connect(line,SIGNAL(returnPressed()),this,SLOT(lineedit_returnPressed()));
     }
 }
+
 MainWindow::~MainWindow()
 {
     delete ui;
@@ -156,6 +159,13 @@ void MainWindow::on_setCurrentIndex()
         ui->stackedWidget->setCurrentIndex(3);
     else if(action->objectName()=="action_bar")
         ui->stackedWidget->setCurrentIndex(4);
+    else if(action->objectName()=="action_about")
+    {
+        QString dlgTitle="about Qt";
+        QMessageBox::aboutQt(this, dlgTitle);
+    }
+    else if(action->objectName()=="action_exit")
+        exit(0);
 
     ui->statusBar->showMessage(QString("切换到:%1页").arg(action->text()));
 }
