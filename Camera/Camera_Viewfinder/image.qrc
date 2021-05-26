@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/ic_back_pre.png</file>
+        <file>image/ic_back.png</file>
+        <file>image/ic_next.png</file>
+        <file>image/menu_icon_pressed.png</file>
+        <file>image/menu_icon.png</file>
+        <file>image/take_pressed.png</file>
+        <file>image/take.png</file>
+        <file>image/tool_pressed.png</file>
+        <file>image/tool.png</file>
+    </qresource>
+</RCC>
