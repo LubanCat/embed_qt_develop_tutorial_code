@@ -60,7 +60,7 @@ win32{
 #}
 
 unix{
-    DESTDIR         = $$PWD/../../app_bin/input
+    DESTDIR         = $$PWD/../plugin/googlepinyin
     MOC_DIR         = $$PWD/../../build/input/googlepinyin
     OBJECTS_DIR     = $$PWD/../../build/input/googlepinyin
 }

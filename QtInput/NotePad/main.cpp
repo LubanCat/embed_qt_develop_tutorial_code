@@ -14,8 +14,8 @@
 
 int main(int argc, char *argv[])
 {
-    //qputenv("QT_IM_MODULE", QByteArray("xyinput"));
-    qputenv("QT_IM_MODULE", QByteArray("tgtsml"));
+    qputenv("QT_IM_MODULE", QByteArray("xyinput"));
+    //qputenv("QT_IM_MODULE", QByteArray("tgtsml"));
     QApplication a(argc, argv);
     NotePadWidget w;
 #ifdef __arm__

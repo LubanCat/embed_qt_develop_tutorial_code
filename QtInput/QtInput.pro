@@ -1,5 +1,6 @@
 TEMPLATE        = subdirs
-SUBDIRS         = googlepinyin plugin testWindow NotePad
+SUBDIRS         = googlepinyin plugin testWindow NotePad \
+    sysInput
 
 CONFIG          += ordered
 
